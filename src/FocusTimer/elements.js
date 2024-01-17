@@ -1,0 +1,7 @@
+export const controls = document.getElementById('controls')
+export const minutes = document.getElementById('minutes')
+export const seconds = document.getElementById('seconds')
+export const soundsControls = document.querySelector('.two')
+export const config = document.getElementById('config')
+export const btnGravar = document.getElementById('btn-gravar')
+export const msgBtns = document.querySelector('.alert-error')

@@ -1,0 +1,307 @@
+/*reset básico de CSS*/
+:root {
+    --tt-color: hsl(245, 75%, 18%);
+    --tt-color-hover: hsla(194, 97%, 31%, 1);
+    --bg-color: hsl(0, 0%, 100%);
+    --msg-error: rgb(243, 43, 43);
+    /* cores relacionadas aos Cards */
+   font-size: 62.5%;
+}
+
+html.dark {
+    --tt-color: hsl(0, 0%, 100%);
+    --bg-color: hsl(245, 75%, 18%);    
+}
+
+html.dark .ph-moon,
+html:not(.dark) .ph-sun {
+    display: none;
+}
+
+.sr-only {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    overflow: hidden;
+
+    margin: -1px;
+    padding: 0px;
+    border: 0;
+    appearance: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;    
+}
+
+.running .ph-play-circle,
+html:not(.running) .ph-pause-circle {
+    display: none;
+}
+
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+
+    background-color: var(--bg-color);
+    color: var(--tt-color);
+
+    transition: background linear 460ms;
+}
+
+.alert-error.open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all ease-in-out .8s;
+}
+
+.alert-error {
+    position: absolute;
+
+    background: var(--msg-error);
+    top: 0; right: 0; left: 0;
+    text-align: center;
+    color: #fff;
+
+    padding: 2rem;
+
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: transform .5s;
+}
+
+
+header {
+    width: min(84rem, 90vw);
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 2.4rem 0;
+}
+
+header button {
+    color: var(--tt-color);
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    font-size: 3.2rem;
+}
+
+
+#toggle-mode {
+    color: var(--text-color);
+}
+
+#app {
+    height: 80vh;
+
+    display: grid;
+    place-content: center;
+}
+
+.content {
+    display: flex;
+    gap: 19rem
+}
+
+.one .time {
+    margin: 5.8rem 0 1.6rem;
+}
+
+.one .time span {
+    color: var(--tt-color);
+    font-size: 12.6rem;
+    
+    font-weight: 500;    
+}
+
+#controls {
+    display: flex;
+    justify-content: space-between;
+}
+
+#controls button {
+    color: var(--tt-color);
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    font-size: 4.8rem;
+
+    background: url() no-repeat;
+}
+
+#controls button:hover{
+    color: var(--tt-color-hover);
+}
+
+.two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 3.2rem;
+}
+
+.card {
+    height: 15.2rem;
+    width: 13.8rem;
+    cursor: pointer;
+
+    background: center no-repeat;
+    background-color: #E1E1E6;
+    border-radius: 2.4rem;
+
+    transition: background ease 360ms;
+}
+
+.card:hover,
+.card.active {
+    background-color: var(--tt-color-hover);
+    border-radius: 2.4rem;
+}
+
+/* modal */
+.modal-wrapper.open {
+    opacity: 1;
+    visibility: visible;
+    transition: all ease-in-out 350ms;
+}
+
+.modal-wrapper {
+    position: absolute;
+    
+    /*  top: 0; bottom: 0; right: 0; left: 0;
+    toda configuração acima pode ser trocada apenas por uma: */
+    inset: 0;
+    
+    background: rgba(4, 31, 49, 0.7);
+    display: grid;
+    place-content: center;
+
+    
+    /* sumindo com modal por padrão */
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal {
+    width: min(42rem, 90vw);
+    padding: 2.4rem;
+    background-color: white;
+    position: relative;
+
+    border-radius: 2.4rem;
+}
+
+.modal #btn-modal {
+    background: none;
+    border: none;
+    
+    position: absolute;
+    top: 1.6rem; right: 1.6rem;
+
+    cursor: pointer;
+    transition: transform .3s;
+}
+
+.modal #btn-modal i {
+    font-size: 2.4rem;
+}
+
+.modal #btn-modal:hover {
+    transform: scale(1.2);
+}
+
+.modal h2 {
+    margin-top: 2.4rem;
+    font-size: 2.4rem;
+    text-align: center;
+    font-style: normal;
+    color: black;
+}
+
+form {
+    margin: 3.2rem 0 1.6rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 2rem
+}
+
+form .input-wrapper {
+    color: black;
+}
+
+form .input-wrapper label {
+    display: block;
+    font-size: 1.6rem;
+    font-style: normal;
+
+    margin-bottom: 1rem;
+}
+
+form .input-wrapper input {
+    width: 100%;
+    padding: 1rem;
+}
+
+.modal #btn-gravar {
+    padding: 1rem;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+}
+
+.error {
+    margin-top: 1.6rem;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    background: var(--msg-error);
+
+    transition: all ease-in-out 250ms;
+}
+
+.success {
+    margin-top: 1.6rem;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    background: rgb(127, 235, 77);
+
+    transition: all ease-in-out 250ms;
+}
+
+@media (max-width: 850px) {
+    header {
+        padding: 1.6rem 0;
+    }
+
+    #app {
+        height: auto;
+    }
+    
+    .content {
+        display: block;
+    }
+
+    .one {
+        margin-bottom: 4.8rem;
+    }
+
+    .one .time {
+        margin:  0 1.6rem 1.6rem;
+    }
+
+    .one .time span {
+        font-size: 10rem;
+    }
+}
+

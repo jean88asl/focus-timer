@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./style.css">
+
+    <script src="./src/main.js" type="module" defer></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="shortcut icon" href="./assets/clock.ico" type="image/x-icon">
+
+    <title>Focus Timer V2</title>
+</head>
+
+<body>
+    <div class="alert-error">
+        
+    </div>
+
+    <header>
+        <button id="config">
+            <i class="ph ph-gear-six"></i>
+        </button>
+
+        <button id="toggle-mode">
+            <!-- A linha abaixo é essencial para a acessibilidade -->
+            <span class="sr-only">Ativar dark mode!</span>
+            <i class="ph-bold ph-sun"></i>
+            <i class="ph-bold ph-moon"></i>
+        </button>
+    </header>
+
+    <div id="app">
+
+        <div class="content">
+            <section class="one">
+                <div class="time">
+                    <span id="minutes">15</span>
+                    <span>:</span>
+                    <span id="seconds">00</span>
+                </div>
+
+                <div id="controls">
+                    <button data-action="toggleRunning" class="ph ph-play-circle" title="Iniciar o contador">
+                        <span class="sr-only">Iniciar contador</span>
+                    </button>
+                    <button data-action="toggleRunning" class="ph ph-pause-circle" title="Pausar contador">
+                        <span class="sr-only">Pausar contador</span>
+                    </button>
+                    <button data-action="reset" class="ph ph-stop-circle" title="Resetar contador">
+                        <span class="sr-only">Resetar contador</span>
+                    </button>
+                    <button data-action="addMinutes" class="ph ph-plus-circle" title="Adicionar minuto(s)">
+                        <span class="sr-only">Adcionar 5 minutos</span>
+                    </button>
+                    <button data-action="removeMinutes" class="ph ph-minus-circle" title="Remover minuto(s)">
+                        <span class="sr-only">Reduzir 5 minutos</span>
+                    </button>
+                </div>
+            </section>
+
+            <section class="two">
+                <div 
+                    class="card"
+                    data-action="forestSound"
+                    style="background-image: url(./assets/forest.svg);"> 
+                    <span class="sr-only">Sons de uma floresta</span>                    
+                </div>
+
+                <div 
+                    class="card"
+                    data-action="rainSound"
+                    style="background-image: url(./assets/rain.svg);">
+                    <span class="sr-only">Som de chuva</span>
+                </div>
+
+                <div 
+                    class="card"
+                    data-action="coffeeSound"
+                    style="background-image: url(./assets/coffee.svg);">
+                    <span class="sr-only">Som de cafeteria</span>
+                    
+                </div>
+
+                <div 
+                    class="card"
+                    data-action="fireplaceSound"
+                    style="background-image: url(./assets/fireplace.svg);">
+                    <span class="sr-only">Som de lareira</span>                   
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="modal-wrapper">
+        <div class="modal">
+            <button class="close" id="btn-modal">
+                    <i class="ph ph-x-circle"></i>
+            </button>
+            
+            <h2>Personalizar</h2>
+
+            <div id="modal-msg">
+                
+            </div>
+
+            <form>
+                <div class="input-wrapper">
+                    <label for="minutes-modal">Iniciar em:</label>
+                    <input type="text" name="" id="minutes-modal">
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="add-minutes-modal">Min. + ou - </label>
+                    <input type="text" name="" id="add-minutes-modal">
+                </div>
+            </form>
+            
+            <button type="button" id="btn-gravar">Gravar</button>
+              
+        </div>
+    </div>
+</body>
+
+</html>
