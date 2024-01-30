@@ -2,7 +2,7 @@
 
 Aplicação ideal para utilizar quando estiver estudando, além de contabilizar um determinado período de tempo, possui opções para inserção de sons que irão auxiliar na concentração e foco do usuário. 
 
-Clique <a target="_blank" href="https://codepen.io/jean_88asl/full/jOJbLOK">aqui</a> para testar a aplicação. 
+Clique <a target="_blank" href="https://focus-timer-v2.netlify.app/">aqui</a> para testar a aplicação. 
 
 Página inicial do projeto:
 
